@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\Users\nance\Documents\Dossier_de_programation\Web\projet-net-01\Projet-netflix_1\DatabaseLinking\db_con.php';
+require_once '../db_linking/connect.php';
 function authentif($nom_utilisateur, $password)
 {
     /**fonction qui permet l'authentifiication de l'utilisateur qui essaie de se connecter 
@@ -16,7 +16,7 @@ function authentif($nom_utilisateur, $password)
                     session_start();
                     $_SESSION['Auth_user_session'] = array(
                         "ID" => $row['ID'],
-                        'etat_user' => $row["ETAT"],
+                        "postes" => $row['POSTES'],
                         "user_session" => true,
                         "user_name" => $nom_utilisateur,
                         "user_mail" => $row['E_MAIL'],
