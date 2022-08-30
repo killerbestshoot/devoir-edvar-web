@@ -1,5 +1,5 @@
 <?php
-$data_base_name = 'Bonbagay';
+$data_base_name = 'bonbagay';
 $server_name = 'localhost';
 $db_username = 'root';
 $db_password = 'Bastien98';

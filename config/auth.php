@@ -1,5 +1,5 @@
 <?php
-require_once '../db_linking/connect.php';
+require_once 'db_linking/connect.php';
 function authentif($nom_utilisateur, $password)
 {
     /**fonction qui permet l'authentifiication de l'utilisateur qui essaie de se connecter 
@@ -9,10 +9,10 @@ function authentif($nom_utilisateur, $password)
      * une chose s'est mal passe et initialise la variable de session utilisateur pour les prochaine operation de cette utilisateur
      * */
     try {
-        $result = conn()->query("SELECT * FROM members WHERE NOM_UTILISATEUR ='$nom_utilisateur'");
+        $result = conn()->query("SELECT * FROM employee WHERE NOM_UTILISATEUR ='$nom_utilisateur' AND MOT_DE_PASSE='$password'");
         if ($result->num_rows):
             while ($row = $result->fetch_assoc()) {
-                if (password_verify($password, $row["MOT_DE_PASSE"]) && $row['ETAT'] === "active"):
+                if ($row['ETAT'] === "active"):
                     session_start();
                     $_SESSION['Auth_user_session'] = array(
                         "ID" => $row['ID'],
@@ -24,8 +24,8 @@ function authentif($nom_utilisateur, $password)
                         "prenom" => $row['PRENOM'],
                         "tel" => $row['TELEPHONE']
                     );
-                    header("Location:/pages/home-page/welcom.php");
-                elseif (password_verify($password, $row["MOT_DE_PASSE"]) && $row['ETAT'] === "inactive"):
+                    header("Location:/homepages/userpages.php");
+                elseif ($row['ETAT'] === "inactive"):
                     $GLOBALS['error_msg'] = "Compte inactive";
                 else:
                     $GLOBALS['error_msg'] = "Nom utilisateur et/ou Mot de passe invalide";
