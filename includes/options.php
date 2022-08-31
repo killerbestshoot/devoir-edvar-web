@@ -1,5 +1,5 @@
 <?php
-$poste = "comptable";
+$poste = $_session[´Auth_user_sessio´][´poste´];
 switch ($poste) {
     case $poste === "vendeur":
         echo "
