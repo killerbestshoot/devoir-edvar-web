@@ -1,3 +1,12 @@
+<?php
+if(isset($_POST[´ajouter´],$_POST[´effacer´])):
+   if(!empty($_POST[´cli-name´]) || !empty($_POST[´cli-fname´]) || !empty($_POST[´cli-sex´]) ||  !empty($_POST[´cli=birth´]) || !empty($_POST[´cli-adr´]) || !empty($_POST[´cli-tel´]) ):
+   $GLOBALS[´ERROR_MSG´]=´tout les champs sont obligatoires´;
+   else:
+   
+   endif;
+endif;
+   ?>
 <div>
     <div>
         <h2>Clients</h2>
