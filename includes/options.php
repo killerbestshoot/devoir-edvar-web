@@ -1,5 +1,5 @@
 <?php
-$poste = $_session[´Auth_user_sessio´][´poste´];
+$poste = $_SESSION['Auth_user_session']['postes'];
 switch ($poste) {
     case $poste === "vendeur":
         echo "
