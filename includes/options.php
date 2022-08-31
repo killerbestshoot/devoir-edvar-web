@@ -7,21 +7,27 @@ switch ($poste) {
     
     <div>
         <h3>Insertion</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
     <div>
         <h3>Modidfication</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
     <div>
         <h3>Consultation</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
 </div>";
         break;
@@ -31,21 +37,27 @@ switch ($poste) {
     
     <div>
         <h3>Insertion</h3>
-        <li><a href='http://'>Clihents</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
     <div>
         <h3>Modidfication</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
     <div>
         <h3>Consultation</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
 </div>";
         break;
@@ -55,21 +67,27 @@ switch ($poste) {
     
     <div>
         <h3>Insertion</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
     <div>
         <h3>Modidfication</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
     <div>
         <h3>Consultation</h3>
-        <li><a href='http://'>Clients</a></li>
-        <li><a href='http://'>Articles</a></li>
-        <li><a href='http://'>Achats</a></li>
+        <form method=´get´>
+        <li><a href=''>Clients</a></li>
+        <li><a href=''>Articles</a></li>
+        <li><a href=''>Achats</a></li>
+        </form>
     </div>
 </div>";
         break;
