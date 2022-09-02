@@ -18,7 +18,8 @@ endif;
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/styles-connectionphp.css">
+  <link rel="stylesheet" href="stylesconn.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Plezi shippinng | Page de Connection</title>
 </head>
 
@@ -31,15 +32,17 @@ endif;
         </div>
         <?php
 if (isset($error_msg)) {
-  echo "<p class='error'>" . $error_msg . "</p>";
+  echo "<p class='alert alert-danger'>" . $error_msg . "</p>";
 }
 ?>
         <div class="champ-texte">
-          <input type="text" class="champtxt" name="user_name" id="usernames" placeholder="Ex: Doe_2022" required />
-          <input type="password" class="champtxt" name="user_pass" id="userpasswords" autocomplete="off"
-            placeholder="************" required />
+          <label for="username"></label>
+          <input type="text" class="form-control" id="username" aria-describedby="helpusername" name="user_name"
+            id="usernames" placeholder="Ex: Doe_2022" required />
+          <input type="password" class="form-control" id="passs-w" aria-describedby="emailHelp" name="user_pass"
+            id="userpasswords" autocomplete="off" placeholder="************" required />
         </div>
-        <input type="submit" class="validder" value="valider" name="valider" />
+        <input type="submit" class="btn btn-primary" value="valider" name="valider" />
       </div>
     </form>
   </main>
