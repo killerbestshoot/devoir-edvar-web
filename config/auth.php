@@ -24,7 +24,11 @@ function authentif($nom_utilisateur, $password)
                         "prenom" => $row['PRENOM'],
                         "tel" => $row['TELEPHONE']
                     );
+                if(!$_SESSION['Auth_user_session']['poste']==="administrator"):
                     header("Location:/homepages/userpages.php");
+                else:
+                header("Location:/homepages/userpages.php");
+                endif;
                 elseif ($row['ETAT'] === "inactive"):
                     $GLOBALS['error_msg'] = "Compte inactive";
                 else:
