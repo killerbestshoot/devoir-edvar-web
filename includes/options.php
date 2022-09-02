@@ -1,6 +1,6 @@
 <?php
 switch ($POSTE) {
-    case $poste === "vendeur":
+    case $POSTE === "vendeur":
         echo "
 <div>
     
@@ -30,7 +30,7 @@ switch ($POSTE) {
     </div>
 </div>";
         break;
-    case $poste === "comptable":
+    case $POSTE === "comptable":
         echo "
 <div>
     
