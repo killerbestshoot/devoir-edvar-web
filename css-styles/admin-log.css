@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap");
+*,
+a,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  font-size: 16px;
+}
+body {
+  height: 100vh;
+  background-image: url("https://rare-gallery.com/thumbs/1153017-white-black-illustration-simple-background-abstract-red-artwork-text-logo-graphic-design-circle-lines-brand-banner-shape-design-line-font.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+main {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+.content .alert {
+  width: 70%;
+  display: flex;
+  padding: 25px 20px;
+  font-size: 15px;
+  justify-content: space-between;
+  color: crimson;
+}
+p {
+  margin: 0;
+}
+
+.title {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  color: rgb(8, 8, 8);
+  text-align: center;
+  font-family: "Slabo 27px", serif;
+}
+.title h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+form .connection .alert {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+}
+.error {
+  width: 70%;
+}
+.champ-texte {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  padding: 0;
+}
+.form-control {
+  width: 40%;
+}
+.btn {
+  background-color: green;
+  border: none;
+}

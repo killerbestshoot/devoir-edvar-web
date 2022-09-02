@@ -11,6 +11,10 @@ html {
 }
 body {
   height: 100vh;
+  background: url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 main {
   width: 90%;
@@ -19,28 +23,34 @@ main {
 form {
   width: 100%;
 }
+.content {
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  position: absolute;
+}
 .connection {
-  width: 70%;
+  width: 40%;
   margin: auto;
-  background-color: rgb(205, 132, 132);
-  border: 1px solid black;
 }
 .title {
   width: 90%;
-  margin: 20px auto;
+  margin: 25px auto;
   padding: 20px;
-  font-size: 30px;
-  color: #34568b;
+  color: rgb(8, 8, 8);
   text-align: center;
-  border: 1px solid black;
   font-family: "Slabo 27px", serif;
 }
+.title h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
 .alert {
-  width: 60%;
-  margin: auto;
+  width: 90%;
+  margin: 20px auto;
+  padding: 15px 0;
   text-align: center;
   color: red;
-  border: 1px solid black;
 }
 .champ-texte {
   width: 90%;
@@ -48,11 +58,19 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 1px solid black;
 }
-.validder {
+label {
+  font-size: 25px;
+  color: #34568b;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+small {
+  color: crimson;
+  margin-left: 10px;
+}
+.btn {
   width: 30%;
-  border: 1px solid black;
-  margin-left: 30%;
+  margin: 20px 35%;
   align-self: center;
 }
