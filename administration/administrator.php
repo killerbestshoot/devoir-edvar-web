@@ -8,4 +8,13 @@ $NOM=$_SESSION['Auth_user_session']['nom'];
 $PRENOM=$_SESSION['Auth_user_session']['prenom'];
 $TEL=$_SESSION['Auth_user_session']['tel'];
                    
-include '';
+include '../includes/header.php';
+?>
+<main>
+    <section class="gauche">
+        <?php include '../includes/options.php'; ?>
+    </section>
+    <section class="droite">
+
+    </section>
+</main>
