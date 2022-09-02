@@ -27,7 +27,7 @@ function authentif($nom_utilisateur, $password)
                 if(!$_SESSION['Auth_user_session']['poste']==="administrator"):
                     header("Location:/homepages/userpages.php");
                 else:
-                header("Location:/homepages/userpages.php");
+                header("Location:/administration/administrator.php");
                 endif;
                 elseif ($row['ETAT'] === "inactive"):
                     $GLOBALS['error_msg'] = "Compte inactive";
