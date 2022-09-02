@@ -1,11 +1,29 @@
 <?php
-if (isset($_POST['ajouter']) || isset($_POST['effacer'])):
+require_once '../config/data_commit_fetch.php';
+if (isset($_POST['ajouter'])):
     if (!empty($_POST['cli-name']) || !empty($_POST['cli-fname']) || !empty($_POST['cli-birth']) || !empty($_POST['cli-adr']) || !empty($_POST['cli-tel']) ||
     !empty($_POST['cli-ville']) || !empty($_POST['cli-pays'])):
-        require_once '../config/data_commit_fetch.php';
+        $id = 0;
+        $cli_name = htmlspecialchars($_POST['cli-name']);
+        $cli_fname = htmlspecialchars($_POST['cli-fname']);
+        $cli_sex = htmlspecialchars($_POST['cli-sex']);
+        $cli_birth = htmlspecialchars($_POST['cli-birth']);
+        $cli_codepostal = htmlspecialchars($_POST['cli-cp']);
+        $cli_ville = htmlspecialchars($_POST['cli-ville']);
+        $cli_pays = htmlspecialchars($_POST['cli-pays']);
+        $cli_adr = htmlspecialchars($_POST['cli-adr']);
+        $cli_tel = htmlspecialchars($_POST['cli-tel']);
+        $cli_num = substr($cli_name, 0, 3) . "-" . rand(100000, 1000000);
+        save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli_codepostal, $cli_ville, $cli_pays, $cli_adr, $cli_tel);
     else:
         $GLOBALS['ERROR_MSG'] = "tout les champs sont obligatoires";
-
+    endif;
+elseif (isset($_POST['effacer'])):
+    if (!empty($_POST['cli-name']) || !empty($_POST['cli-fname']) || !empty($_POST['cli-birth']) || !empty($_POST['cli-adr']) || !empty($_POST['cli-tel']) || !empty($_POST['cli-ville']) || !empty($_POST['cli-pays'])):
+        $cli_num = listing_cli()['cli_num'];
+        supp_cli($cli_num);
+    else:
+        $GLOBALS['ERROR_MSG'] = "impossible de supprimer";
     endif;
 endif;
 ?>
@@ -20,6 +38,18 @@ if (isset($ERROR_MSG)):
     </div>
     ";
 endif;
+
+$id = 0;
+$cli_name = "";
+$cli_fname = "";
+$cli_sex = "";
+$cli_birth = "";
+$cli_codepostal = "";
+$cli_ville = "";
+$cli_pays = "";
+$cli_adr = "";
+$cli_tel = "";
+$cli_num = "";
 ?>
     <div>
         <h2>Clients</h2>

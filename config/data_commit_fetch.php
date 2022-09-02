@@ -1,24 +1,41 @@
 <?php
-require '../db_linking/connect.php';
-$id = 0;
-$cli_name = htmlspecialchars($_POST['cli-name']);
-$cli_fname = htmlspecialchars($_POST['cli-fname']);
-$cli_sex = htmlspecialchars($_POST['cli-sex']);
-$cli_birth = htmlspecialchars($_POST['cli-birth']);
-$cli_codepostal = htmlspecialchars($_POST['cli-cp']);
-$cli_ville = htmlspecialchars($_POST['cli-ville']);
-$cli_pays = htmlspecialchars($_POST['cli-pays']);
-$cli_adr = htmlspecialchars($_POST['cli-adr']);
-$cli_tel = htmlspecialchars($_POST['cli-tel']);
-$cli_num = substr($cli_name, 0, 3) . "-" . rand(100000, 1000000);
-save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli_codepostal, $cli_ville, $cli_pays, $cli_adr, $cli_tel);
+require_once '../db_linking/connect.php';
+$mysqli = conn();
+function listing_cli()
+{
+    try {
+        $result = $GLOBALS['mysqli']->query("SELECT * FROM clients ");
+        if ($result->num_rows):
+            while ($row = $result->fetch_assoc()) {
+                $_SESSION['cli_listing'] = array(
+                    'id' => $row['ID'],
+                    'cli_num' => $row['NOCLIENTS'],
+                    'cli_name' => $row['NOM'],
+                    'cli_fname' => $row['PRENOM'],
+                    'cli_sex' => $row['SEXE'],
+                    'cli_birth' => $row['DATENAISSANCE'],
+                    'cli_codepostal' => $row['CODEPOSTAL'],
+                    'cli_ville' => $row['VILLE'],
+                    'cli_pays' => $row['PAYS'],
+                    'cli_adr' => $row['ADDRESSE'],
+                    'cli_tel' => $row['TELEPHONE']
+                );
+                return $_SESSION['cli_listing'];
+            }
+        else:
+            echo "<div class='empty_msg'><p> Aucune client a afficher</p></div>";
+        endif;
+    }
+    catch (Exception $e) {
+        die('Erreur ;' . $e->getMessage());
+    }
+}
 
 function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli_codepostal, $cli_ville, $cli_pays, $cli_adr, $cli_tel)
 {
     try {
         $ID = $GLOBALS['id'];
-        $mysqli = conn();
-        if ($statement = $mysqli->prepare("INSERT INTO clients (ID,NOCLIENTS,NOM,PRENOM,SEXE,DATENAISSANCE,ADDRESSE,CODEPOSTAL,VILLE,PAYS,TELEPHONE) VALUES (?,?,?,?,?,?,?,?,?,?,?)")):
+        if ($statement = $GLOBALS['mysqli']->prepare("INSERT INTO clients (ID,NOCLIENTS,NOM,PRENOM,SEXE,DATENAISSANCE,ADDRESSE,CODEPOSTAL,VILLE,PAYS,TELEPHONE) VALUES (?,?,?,?,?,?,?,?,?,?,?)")):
             $statement->bind_param("sssssssssss", $ID, $cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli_adr, $cli_codepostal, $cli_ville, $cli_pays, $cli_tel);
             if ($statement->execute()):
                 echo "<div class='succes_msg'><p>Enregitrement effectuer avec succes</p></div>";
@@ -28,7 +45,7 @@ function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli
         else:
             echo "Echec lors de la preparation de la requette suivant : (" . $mysqli->errno . ")" . $mysqli->error;
         endif;
-        $mysqli->close();
+        $GLOBALS['mysqli']->close();
     }
     catch (Exception $e) {
         switch ($e) {
@@ -39,5 +56,19 @@ function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli
             default:
                 die('Erreur 1: ' . $e->getMessage() . $e->getCode());
         }
+    }
+}
+function supp_cli($cli_num)
+{
+    try {
+        if ($GLOBALS['mysqli']->query("DELETE FROM clients WHERE NOCLIENTS='$cli_num'") === TRUE):
+            echo "<div class='succes_msg'><p>Enregitrement effectuer avec succes</p></div>";
+        else:
+            $GLOBALS['ERROR_MSG'] = "La suppresion a echouer, une erreur s'est produite";
+        endif;
+        $GLOBALS['mysqli']->close();
+    }
+    catch (Exception $e) {
+        die('Erreur ;;' . $e->getMessage());
     }
 }
