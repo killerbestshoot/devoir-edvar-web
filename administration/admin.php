@@ -25,7 +25,7 @@ endif;
 
 <body>
     <main class="content">
-        <div "alert alert-warning alert-dismissible">
+        <div class="alert alert-warning alert-dismissible">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <p></strong>Attention !</strong> rentrer vos identifiants Administrateur, Sinon retourner a la page de <a
                     href="../login.php" class="alert-link">connection</a></p>
