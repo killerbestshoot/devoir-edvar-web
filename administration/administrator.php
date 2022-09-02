@@ -7,6 +7,7 @@ $USERMAIL=$_SESSION['Auth_user_session']['user_mail'];
 $NOM=$_SESSION['Auth_user_session']['nom'];
 $PRENOM=$_SESSION['Auth_user_session']['prenom'];
 $TEL=$_SESSION['Auth_user_session']['tel'];
+                   
 include '../includes/header.php';
 ?>
 <main>
@@ -14,7 +15,6 @@ include '../includes/header.php';
         <?php include '../includes/options.php'; ?>
     </section>
     <section class="droite">
-        <?php include '../includes/clients.php'; ?>
 
     </section>
 </main>
