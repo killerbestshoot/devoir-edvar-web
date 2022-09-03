@@ -9,3 +9,31 @@ ul,
   box-sizing: border-box;
   text-decoration: none;
 }
+.navbar {
+  background-color: #1abc9c5c;
+  padding: 15px 0;
+  border-radius: 0px;
+}
+.navbar .navbar-brand {
+  font-size: 40px;
+  color: #34568b;
+  font-family: "Slabo 27px", serif;
+}
+.navbar .navbar-brand:hover {
+  color: #34568b;
+}
+.body-separate {
+  display: flex;
+}
+.navbar-nav {
+  margin-left: 20%;
+}
+.navbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-right li:nth-child(1) a,
+.navbar-right li:nth-child(2) a {
+  color: black;
+}
