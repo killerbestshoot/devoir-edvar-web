@@ -43,7 +43,7 @@ function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli
                 $GLOBALS['ERROR_MSG'] = "Enregistrer du client echouer";
             endif;
         else:
-            echo "Echec lors de la preparation de la requette suivant : (" . $mysqli->errno . ")" . $mysqli->error;
+            echo "Echec lors de la preparation de la requette suivant : (" . $GLOBALS['mysqli']->errno . ")" . $GLOBALS['mysqli']->error;
         endif;
         $GLOBALS['mysqli']->close();
     }

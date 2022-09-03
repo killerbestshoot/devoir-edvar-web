@@ -55,7 +55,7 @@
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Parametre</a></li>
-                                <li><a href="#">Deconnection</a></li>
+                                <li><a href="../config/de_auth.php">Deconnection</a></li>
                             </ul>
                         </li>
                     </ul>
