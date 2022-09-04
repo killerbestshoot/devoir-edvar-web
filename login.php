@@ -61,7 +61,7 @@ endif;
 ?>
           <label for="passs-w">Password</label>
           <input type="password" class="form-control" id="passs-w" name="user_pass" id="userpasswords"
-            autocomplete="off" placeholder="************" value='ok' required />
+            autocomplete="off" placeholder="************" value='ok1' required />
           <?php if (isset($error_msg_small_pass)):
   echo "<small>$error_msg_small_pass</small>";
 endif;
