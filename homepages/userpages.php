@@ -15,7 +15,18 @@ include '../includes/header.php';
         <?php include '../includes/options.php'; ?>
     </section>
     <section class="droite">
-        <?php include '../includes/clients.php'; ?>
+        <?php 
+        $option_menu=$_GET;
+        switch($option_menu){
+            case $option_menu==="insertio-client":
+                include '../includes/clients.php';
+                break;
+                case $option_menu==="insertion_article";
+                break;
+                default:
+                include '../includes/clients.php';
+
+        }?>
 
     </section>
 </main>
