@@ -1,13 +1,23 @@
 <?php
-session_unset();
+// session_unset();
+session_start();
+$is_refreshed = (isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0');
 if (isset($_POST['valider'])):
+  $_SESSION['session_fields_data'] = array(
+    // 'user_name' => $_POST['user_name'],
+    'user_name' => "ok",
+    'user_pass' => $_POST['user_pass'],
+  );
   if (empty($_POST['user_name']) || empty($_POST['user_pass'])):
     $error_msg = "Veuillez remplir tout les champs";
-  elseif (strlen($_POST['user_name']) <= 10 || strlen($_POST['user_pass']) <= 8):
-    if (strlen($_POST['user_name']) <= 10):
-      $error_msg_small_login = "le nom d'ulisateur ne remplit pas les condition";
-    elseif (strlen($_POST['user_pass']) <= 8):
-      $error_msg_small_pass = "le mot de passe ne remplit pas les conditions";
+  elseif (strlen($_POST['user_name']) <= 9 && strlen($_POST['user_pass']) <= 7):
+    $error_msg_small_pass = "le mot de passe doit faire 8 characters minimum";
+    $error_msg_small_login = "le nom utilisateur doit faire 10 characters minimum";
+  elseif (strlen($_POST['user_name']) <= 9 || strlen($_POST['user_pass']) <= 7):
+    if (strlen($_POST['user_name']) <= 9):
+      $error_msg_small_login = "le nom utilisateur doit faire 10 characters minimum";
+    elseif (strlen($_POST['user_pass']) <= 7):
+      $error_msg_small_pass = "le mot de passe doit faire 8 characters minimum";
     endif;
   else:
     require 'config/auth.php';
@@ -35,21 +45,23 @@ endif;
           <h2>Connection</h2>
         </div>
         <?php
-if (isset($error_msg)) {
+if (isset($error_msg)):
   echo "<p class='alert alert-danger'>" . $error_msg . "</p>";
-}
+endif;
+echo $_SESSION[' session_fields_data']['user_name'];
 ?>
         <div class="champ-texte">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="user_name" id="usernames"
-            placeholder="Ex: Doe_2022" required />
+            placeholder="Ex: Doe_2022" value='<?= isset($_SESSION['session_fields_data']['user_name']) ? 
+  $_SESSION['user_name'] : '' ; ?>' required />
           <?php if (isset($error_msg_small_login)):
   echo "<small>$error_msg_small_login</small>";
 endif;
 ?>
           <label for="passs-w">Password</label>
           <input type="password" class="form-control" id="passs-w" name="user_pass" id="userpasswords"
-            autocomplete="off" placeholder="************" required />
+            autocomplete="off" placeholder="************" value='ok' required />
           <?php if (isset($error_msg_small_pass)):
   echo "<small>$error_msg_small_pass</small>";
 endif;
@@ -60,5 +72,7 @@ endif;
     </form>
   </main>
 </body>
+
+</html>
 
 </html>

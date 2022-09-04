@@ -2,38 +2,38 @@
 switch ($POSTE) {
     case $POSTE === "vendeur":
         echo "
-<nav class='navbar navbar-default' role='navigation'>
-  <div class='navbar-header'>
-    <h4 class=''>Insertion</h4>
-  </div>
-
-  <div class='collapse navbar-collapse navbar-ex1-collapse'>
-    <form action=''>
-      <ul class='nav navbar-nav'>
-        <li class='active'><a href='#'>client</a></li>
-        <li><a href='#'>article</a></li>
-        <li><a href='#'>achat</a></li>
-      </ul>
-    </form>
-    <div class='navbar-header'>
-      <h4 class=''>Modiffication</h4>
-    </div>
-
-    <ul class='nav navbar-nav'>
-      <li class='active'><a href='#'>client</a></li>
-      <li><a href=''>article</a></li>
-      <li><a href=''>achat</a></li>
-    </ul>
-    <div class='navbar-header'>
-      <h4 class=''>Consultation</h4>
-    </div>
-    <ul class='nav navbar-nav'>
-      <li class='active'><a href=''>client</a></li>
-      <li><a href=''>article</a></li>
-      <li><a href=''>achat</a></li>
-    </ul>
-  </div>
-</nav>";
+            <div class='container'>
+                <div class='action-head'>
+                    <h4 class=''>Insertion</h4>
+                </div>
+                <form action=''>
+                    <ul class='l-option'>
+                        <li class='active'><a href='#'>client</a></li>
+                        <li><a href='#'>article</a></li>
+                        <li><a href='#'>achat</a></li>
+                    </ul>
+                </form>
+                <div class='action-head'>
+                <h4 class=''>Modiffication</h4>
+                </div>
+                <form>
+                        <ul class=''>
+                            <li class='active'><a href='#'>client</a></li>
+                            <li><a href=''>article</a></li>
+                            <li><a href=''>achat</a></li>
+                        </ul>
+                    </form>
+                    <div class='action-head'>
+                    <h4 class=''>Consultation</h4>
+                    </div>
+                    <form>
+                        <ul class=''>
+                            <li class='active'><a href=''>client</a></li>
+                            <li><a href=''>article</a></li>
+                            <li><a href=''>achat</a></li>
+                        </ul>
+                    </form>
+         </div>";
         break;
     case $POSTE === "comptable":
         echo "

@@ -46,7 +46,7 @@ ul,
 }
 .body-separate .gauche {
   width: 20%;
-  background-color: rgb(192, 108, 108);
+  /* background-color: rgb(192, 108, 108); */
 }
 .body-separate .droite {
   width: 75%;
@@ -107,4 +107,20 @@ label {
 .alert {
   width: 90%;
   margin: auto;
+}
+.container {
+  width: 100%;
+  padding: 10px 0;
+  min-height: 50%;
+  border: 1px solid crimson;
+}
+.container .action-head {
+  margin: 10px 0;
+  background-color: gray;
+  color: black;
+  padding: 10px;
+  width: 100%;
+}
+.container .action-head h4 {
+  font-size: 16px;
 }
