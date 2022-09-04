@@ -48,13 +48,13 @@ endif;
 if (isset($error_msg)):
   echo "<p class='alert alert-danger'>" . $error_msg . "</p>";
 endif;
-echo $_SESSION[' session_fields_data']['user_name'];
+echo $_SESSION['session_fields_data']['user_name'];
 ?>
         <div class="champ-texte">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="user_name" id="usernames"
-            placeholder="Ex: Doe_2022" value='<?= isset($_SESSION[' session_fields_data']['user_name']) ?
-            $_SESSION['user_name'] : ''; ?>' required />
+            placeholder="Ex: Doe_2022" value='<?= isset($_SESSION['session_fields_data']['user_name']) ? 
+  $_SESSION['user_nme'] : ''; ?>' required />
           <?php if (isset($error_msg_small_login)):
   echo "<small>$error_msg_small_login</small>";
 endif;
