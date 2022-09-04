@@ -38,9 +38,21 @@ function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli
         if ($statement = $GLOBALS['mysqli']->prepare("INSERT INTO clients (ID,NOCLIENTS,NOM,PRENOM,SEXE,DATENAISSANCE,ADDRESSE,CODEPOSTAL,VILLE,PAYS,TELEPHONE) VALUES (?,?,?,?,?,?,?,?,?,?,?)")):
             $statement->bind_param("sssssssssss", $ID, $cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli_adr, $cli_codepostal, $cli_ville, $cli_pays, $cli_tel);
             if ($statement->execute()):
-                echo "<div class='succes_msg'><p>Enregitrement effectuer avec succes</p></div>";
+                $GLOBALS['SUCCES'] = "
+                <div class='alert alert-success'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <p>
+                        Enregistrement effectuer avec succes
+                    </p>
+                </div>";
             else:
-                $GLOBALS['ERROR_MSG'] = "Enregistrer du client echouer";
+                $GLOBALS['FAILD'] = "
+                <div class='alert alert-warning'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <p>
+                        Enregistrement echouer 
+                    </p>
+                </div>";
             endif;
         else:
             echo "Echec lors de la preparation de la requette suivant : (" . $GLOBALS['mysqli']->errno . ")" . $GLOBALS['mysqli']->error;

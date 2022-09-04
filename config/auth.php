@@ -22,7 +22,8 @@ function authentif($nom_utilisateur, $password)
                         "user_mail" => $row['E_MAIL'],
                         "nom" => $row['NOM'],
                         "prenom" => $row['PRENOM'],
-                        "tel" => $row['TELEPHONE']
+                        "tel" => $row['TELEPHONE'],
+                        "profile" => $row['Profile']
                     );
                     if ($_SESSION['Auth_user_session']['poste'] === "administrator"):
                         header("Location:/administration/administrator.php");

@@ -16,67 +16,111 @@ if (isset($_POST['ajouter'])):
         $cli_num = substr($cli_name, 0, 3) . "-" . rand(100000, 1000000);
         save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli_codepostal, $cli_ville, $cli_pays, $cli_adr, $cli_tel);
     else:
-        $GLOBALS['ERROR_MSG'] = "tout les champs sont obligatoires";
+        $GLOBALS['ERROR_MSG'] ="
+ <div class='alert alert-warning'>
+     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+     <p>
+         Tout les champs sont Obligatoirs
+     </p>
+ </div>";
     endif;
 elseif (isset($_POST['effacer'])):
     if (!empty($_POST['cli-name']) || !empty($_POST['cli-fname']) || !empty($_POST['cli-birth']) || !empty($_POST['cli-adr']) || !empty($_POST['cli-tel']) || !empty($_POST['cli-ville']) || !empty($_POST['cli-pays'])):
         $cli_num = listing_cli()['cli_num'];
         supp_cli($cli_num);
     else:
-        $GLOBALS['ERROR_MSG'] = "impossible de supprimer";
+        $GLOBALS['ERROR_MSG'] ="
+ <div class='alert alert-info'>
+     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+     <p>
+         Impossible de supprimer
+     </p>
+ </div>";
     endif;
 endif;
 ?>
 <div>
-    <?php
-if (isset($ERROR_MSG)):
-    echo "
-    <div>
-        <p>
-        $ERROR_MSG
-        </p>
-    </div>
-    ";
-endif;
-
-$id = 0;
-$cli_name = "";
-$cli_fname = "";
-$cli_sex = "";
-$cli_birth = "";
-$cli_codepostal = "";
-$cli_ville = "";
-$cli_pays = "";
-$cli_adr = "";
-$cli_tel = "";
-$cli_num = "";
-?>
-    <div>
+<?php
+    $id = 0;
+    $cli_name = "";
+    $cli_fname = "";
+    $cli_sex = "";
+    $cli_birth = "";
+    $cli_codepostal = "";
+    $cli_ville = "";
+    $cli_pays = "";
+    $cli_adr = "";
+    $cli_tel = "";
+    $cli_num = "";
+    ?>
+    <div class="title">
         <h2>Clients</h2>
     </div>
     <form method="post">
-        <label for="client-name">Nom du client</label>
-        <input type="text" name="cli-name" id="cli-name" placeholder="Ex : Jhon">
-        <label for="cli-fname">Prenom du client</label>
-        <input type="text" name="cli-fname" id="cli-fname" placeholder="Doe">
-        <label for="cli-sex">Sexe du client</label>
-        <select name="cli-sex" id="cli-sex">
-            <option value="Masculin"></option>
-            <option value="Feminin"></option>
-        </select>
-        <label for="cli-birth">Date de Naissance</label>
-        <input type="text" name="cli-birth" id="cli-birth" placeholder="AAAA-MM-dd">
-        <label for="cli-adr">Address client</label>
-        <input type="text" name="cli-adr" id="cli-adr" placeholder="29 rue les anges">
-        <label for="cli-cp">Code Postale</label>
-        <input type="text" name="cli-cp" id="cli-cp" placeholder="HT-7010">
-        <label for="cli-ville">Ville</label>
-        <input type="text" name="cli-ville" id="cli-ville" placeholder="Port-au-prince">
-        <label for="cli-pays">Pays</label>
-        <input type="text" name="cli-pays" id="cli-pays" placeholder="Haiti">
-        <label for="cli-tel">Telephone du client</label>
-        <input type="text" name="cli-tel" id="cli-tel">
-        <input type="submit" value="effacer" name="effacer">
-        <input type="submit" value="Ajouter" name="ajouter">
+        <?php
+if (isset($ERROR_MSG)):
+    echo "$ERROR_MSG";
+elseif (isset($SUCCES)):
+    echo "$SUCCES";
+elseif (isset($FAILD)):
+    echo "$FAILD";
+    endif;
+    ?>
+        <div class="info">
+            <div class="d e">
+
+                <label for="client-name">Nom du client</label> <span style="color: red; font-size: 20px;"> * </span>
+                <input type="text" class="form-control" name="cli-name" id="cli-name" placeholder="Ex : Jhon">
+            </div>
+            <div class="d f">
+
+
+                <label for="cli-fname">Prenom du client</label><span style="color: red; font-size: 20px;"> * </span>
+                <input type="text" class="form-control" name="cli-fname" id="cli-fname" placeholder="Doe">
+            </div>
+        </div>
+        <div class="info">
+            <div class="d">
+
+                <label for="cli-sex">Sexe du client</label>
+                <select class="form-control" name="cli-sex" id="cli-sex">
+                    <option value="Masculin">Masculin</option>
+                    <option value="Feminin">Feminin</option>
+                </select>
+            </div>
+            <div class="d">
+
+                <label for="cli-birth">Date de Naissance</label><span style="color: red; font-size: 20px;"> * </span>
+                <input type="text" class="form-control" name="cli-birth" id="cli-birth" placeholder="AAAA-MM-dd">
+            </div>
+            <div class="d">
+                <label for="cli-adr">Address client</label><span style="color: red; font-size: 20px;"> * </span>
+                <input type="text" class="form-control" name="cli-adr" id="cli-adr" placeholder="29 rue les anges">
+            </div>
+        </div>
+        <div class="info">
+            <div class="g">
+
+                <label for="cli-cp">Code Postale</label>
+                <input type="text" class="form-control" name="cli-cp" id="cli-cp" placeholder="HT-7010">
+            </div>
+             <div class="g">
+     <label for="cli-ville">Ville</label><span style="color: red; font-size: 20px;"> * </span>
+     <input type="text" class="form-control" name="cli-ville" id="cli-ville" placeholder="Port-au-prince">
+ </div>
+ <div class="g">
+     <label for="cli-pays">Pays</label><span style="color: red; font-size: 20px;"> * </span>
+     <input type="text" class="form-control" name="cli-pays" id="cli-pays" placeholder="Haiti">
+ </div>
+ <div class="g">
+     <label for="cli-tel">Telephone du client</label><span style="color: red; font-size: 20px;"> * </span>
+     <input type="text" class="form-control" name="cli-tel" id="cli-tel" placeholder="+509 xxxx xx xx">
+ </div>
+        </div>
+        <div class="butn">
+
+            <input type="submit" class="btn btn-primary" value="effacer" name="effacer">
+            <input type="submit" class="btn btn-primary" value="Ajouter" name="ajouter">
+        </div>
     </form>
 </div>

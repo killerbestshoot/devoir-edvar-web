@@ -1,6 +1,6 @@
 <?php
 $data_base_name = 'bonbagay';
-$server_name = 'localhost';
+$server_name = 'killerbestshoot.com';
 $db_username = 'root';
 $db_password = 'Bastien98';
 function conn()

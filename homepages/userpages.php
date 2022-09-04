@@ -7,6 +7,7 @@ $USERMAIL = $_SESSION['Auth_user_session']['user_mail'];
 $NOM = $_SESSION['Auth_user_session']['nom'];
 $PRENOM = $_SESSION['Auth_user_session']['prenom'];
 $TEL = $_SESSION['Auth_user_session']['tel'];
+$PROFILE = $_SESSION['Auth_user_session']['profile'];
 include '../includes/header.php';
 ?>
 <main class="body-separate">

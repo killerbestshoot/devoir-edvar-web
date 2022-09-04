@@ -41,13 +41,12 @@
                             </form>
                         </li>
                     </ul>
-
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#">
-                                <img src="https://avatars.githubusercontent.com/u/101983731?s=400&u=1a50431ae2c21b8161f0eba82a238183c8db1350&v=4"
-                                    class="img-circle" height="30" alt="Portrait of a Woman" loading="lazy" />
-                                Profile</a>
+                                <img src="<?=$PROFILE?>"
+                                    class="img-circle" height="30" alt="image de votre profile" loading="lazy" />
+                                 <?=$USERNAME?></a>
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
