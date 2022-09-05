@@ -113,7 +113,7 @@ elseif (isset($FAILD)):
      <input type="text" class="form-control" name="cli-pays" id="cli-pays" placeholder="Haiti">
  </div>
  <div class="g">
-     <label for="cli-tel">Telephone du client</label><span style="color: red; font-size: 20px;"> * </span>
+     <label for="cli-tel">Tel du client</label><span style="color: red; font-size: 20px;"> * </span>
      <input type="text" class="form-control" name="cli-tel" id="cli-tel" placeholder="+509 xxxx xx xx">
  </div>
         </div>
