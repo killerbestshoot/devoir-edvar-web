@@ -53,6 +53,9 @@ ul,
   margin: auto;
   /* background-color: blue; */
 }
+.cont-r {
+  margin-bottom: 15em;
+}
 .title {
   width: 100%;
   text-align: center;

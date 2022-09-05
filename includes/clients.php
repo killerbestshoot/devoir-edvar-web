@@ -39,7 +39,7 @@ elseif (isset($_POST['effacer'])):
     endif;
 endif;
 ?>
-<div>
+<div class="cont-r">
 <?php
     $id = 0;
     $cli_name = "";
