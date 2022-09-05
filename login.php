@@ -22,7 +22,9 @@ if (isset($_POST['valider'])):
     require 'config/auth.php';
   endif;
 endif;
-
+if (isset($_SESSION['session_fields_data'])):
+  $username = $_SESSION['session_fields_data']['user_name'];
+endif;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,11 +34,15 @@ endif;
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="stylesconn.css">
+  <link rel="shortcut icon" href="/images/gif/Plezi_Shipping.gi" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Plezi shippinng | Page de Connection</title>
 </head>
 
 <body>
+  <div class="loader">
+    <div class="load"></div>
+  </div>
   <main class="content">
     <form method="post">
       <div class="connection">
@@ -44,6 +50,7 @@ endif;
           <h2>Connection</h2>
         </div>
         <?php
+
 if (isset($error_msg)):
   echo "<p class='alert alert-danger'>" . $error_msg . "</p>";
 endif;
@@ -51,8 +58,8 @@ endif;
         <div class="champ-texte">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="user_name" id="usernames"
-            placeholder="Ex: Doe_2022" value='<?= isset($_SESSION['session_fields_data']['user_name']) ? 
-  $_SESSION['session_fields_data']['user_name'] : ''; ?>' required />
+            placeholder="Ex: Doe_2022" value='<?= isset($username) ? 
+  $username : ''; ?>' required />
           <?php if (isset($error_msg_small_login)):
   echo "<small>$error_msg_small_login</small>";
 endif;
@@ -69,6 +76,7 @@ endif;
       </div>
     </form>
   </main>
+  <script src="/js/log.js"></script>
 </body>
 
 </html>

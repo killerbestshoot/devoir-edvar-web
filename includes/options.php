@@ -17,7 +17,7 @@ switch ($POSTE) {
                 <h4 class=''>Modiffication</h4>
                 </div>
                 <form>
-                        <ul class=''>
+                        <ul class='l-option'>
                             <li class='active'><a href='#'>client</a></li>
                             <li><a href=''>article</a></li>
                             <li><a href=''>achat</a></li>
@@ -27,7 +27,7 @@ switch ($POSTE) {
                     <h4 class=''>Consultation</h4>
                     </div>
                     <form>
-                        <ul class=''>
+                        <ul class='l-option'>
                             <li class='active'><a href=''>client</a></li>
                             <li><a href=''>article</a></li>
                             <li><a href=''>achat</a></li>

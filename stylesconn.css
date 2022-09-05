@@ -9,16 +9,102 @@
 html {
   font-size: 16px;
 }
+.loader {
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/gif/Plezi_Shipping.gif");
+  background-size: cover;
+  background-position: center center;
+  animation: load 5s linear infinite;
+  position: absolute;
+  /* background: rgb(156, 20, 20); */
+  z-index: 1;
+}
+.load {
+  animation: rotate 1s infinite;
+  position: inherit;
+  left: 44%;
+  top: 65%;
+  height: 50px;
+  width: 50px;
+}
+.load:before,
+.load:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.load:before {
+  animation: ball1 1s infinite;
+  background-color: #cb2025;
+  box-shadow: 30px 0 0 #2aec40;
+  margin-bottom: 10px;
+}
+.load:after {
+  animation: ball2 1s infinite;
+  background-color: #283332;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0.8);
+    -moz-transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: rotate(720deg) scale(0.8);
+    -moz-transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #f8b334;
+  }
+  50% {
+    box-shadow: 0 0 0 #f8b334;
+    margin-bottom: 0;
+    -webkit-transform: translate(15px, 15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    -webkit-transform: translate(15px, 15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #97bf0d;
+    margin-top: 0;
+  }
+}
+.dispose {
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+  z-index: 0;
+}
 body {
   height: 100vh;
   background: url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-}
-main {
-  width: 90%;
-  margin: auto;
 }
 form {
   width: 100%;
@@ -30,7 +116,8 @@ form {
   position: absolute;
 }
 .connection {
-  width: 40%;
+  width: 35%;
+  min-width: 400px;
   margin: auto;
 }
 .title {
@@ -46,18 +133,22 @@ form {
   font-weight: bold;
 }
 .alert {
-  width: 90%;
+  width: 100%;
   margin: 20px auto;
   padding: 15px 0;
   text-align: center;
   color: red;
 }
 .champ-texte {
-  width: 90%;
+  width: 100%;
   margin: auto;
+  min-width: 290px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+.form-control:hover {
+  cursor: text;
 }
 label {
   font-size: 25px;

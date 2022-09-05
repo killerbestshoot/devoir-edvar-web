@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <div class="loader">
+
+    </div>
     <header>
 <nav>
 <link rel="stylesheet" href="../css-styles/userpage-css.css" />

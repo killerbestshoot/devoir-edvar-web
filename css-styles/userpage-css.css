@@ -110,17 +110,34 @@ label {
 }
 .container {
   width: 100%;
-  padding: 10px 0;
+  padding: 0;
   min-height: 50%;
   border: 1px solid crimson;
 }
 .container .action-head {
-  margin: 10px 0;
+  margin: 0;
   background-color: gray;
   color: black;
-  padding: 10px;
+  padding: 7px;
   width: 100%;
 }
 .container .action-head h4 {
-  font-size: 16px;
+  font-size: 20px;
+  font-family: "Slabo 27px", serif;
+}
+/* .l-option { */
+/* padding: 0; */
+/* } */
+.l-option li {
+  /* background-color: rgb(149, 6, 6); */
+  padding: 8px 0;
+}
+.l-option li a {
+  padding: 0 15px;
+  font-size: 17px;
+}
+.active {
+  /* background-color: rgb(232, 232, 235); */
+  background-color: rgb(96, 220, 34);
+  border-bottom: 3px solid blue;
 }
