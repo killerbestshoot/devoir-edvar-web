@@ -151,7 +151,7 @@ label {
 }
 .active {
   background-color: rgb(224, 231, 220);
-  border-bottom: 3px solid rgb(81, 83, 84);
+  border-bottom: 3px solid rgba(81, 83, 84, 0.685);
 }
 .l-option li:hover:after {
   width: 100%;
