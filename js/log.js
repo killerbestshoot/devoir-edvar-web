@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
   loader.classList.add("dispose");
 });
 
+
 const fields = document.getElementById("passs-w");
 const fields1 = document.getElementById("username");
 fields.addEventListener("mouseover", () => {
@@ -19,3 +20,7 @@ fields1.addEventListener("mouseover", () => {
 fields1.addEventListener("mouseout", () => {
   document.getElementById("username").style.outline = "none";
 });
+
+
+
+

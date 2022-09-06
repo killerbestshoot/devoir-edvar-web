@@ -30,3 +30,4 @@ include '../includes/header.php';
 
     </section>
 </main>
+<script src="/js/userpage.js"></script>

@@ -8,9 +8,9 @@ switch ($POSTE) {
                 </div>
                 <form action=''>
                     <ul class='l-option'>
-                        <li class='active'><a href='#'>client</a></li>
-                        <li><a href='#'>article</a></li>
-                        <li><a href='#'>achat</a></li>
+                        <li ><a href='#'id='selectedoption'>client</a></li>
+                        <li><a href='#'id='selectedoption1'>article</a></li>
+                        <li><a href='#'id='selectedoption2'>achat</a></li>
                     </ul>
                 </form>
                 <div class='action-head'>
@@ -18,9 +18,9 @@ switch ($POSTE) {
                 </div>
                 <form>
                         <ul class='l-option'>
-                            <li class='active'><a href='#'>client</a></li>
-                            <li><a href=''>article</a></li>
-                            <li><a href=''>achat</a></li>
+                            <li><a href='#' id='selectedoption3'>clienct</a></li>
+                            <li><a href=''id='selectedoption4'>article</a></li>
+                            <li><a href=''id='selectedoption5'>achat</a></li>
                         </ul>
                     </form>
                     <div class='action-head'>
@@ -28,9 +28,9 @@ switch ($POSTE) {
                     </div>
                     <form>
                         <ul class='l-option'>
-                            <li class='active'><a href=''>client</a></li>
-                            <li><a href=''>article</a></li>
-                            <li><a href=''>achat</a></li>
+                            <li class=''><a href=''id='selectedoption8'>client</a></li>
+                            <li><a href=''id='selectedoption7'>article</a></li>
+                            <li><a href=''id='selectedoption8'>achat</a></li>
                         </ul>
                     </form>
          </div>";

@@ -41,34 +41,39 @@ ul,
   width: 97%;
   margin: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .body-separate .gauche {
   width: 20%;
+
   /* background-color: rgb(192, 108, 108); */
 }
 .body-separate .droite {
   width: 75%;
+  height: 80%;
   margin: auto;
-  /* background-color: blue; */
+  border-radius: 10px;
+  background-size: cover;
+  background-position: 30% 30%;
+  background-repeat: no-repeat;
+  background-image: url("/images/Screenshot_20220905-011427.png");
 }
 .cont-r {
-  margin-bottom: 15em;
+  margin-bottom: 8em;
 }
 .title {
   width: 100%;
-  text-align: center;
   margin: 35px auto;
+  text-align: center;
   font-family: "Slabo 27px", serif;
 }
 .info {
   width: 90%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
-  /* border: 1px solid black; */
   align-items: center;
+  justify-content: space-between;
 }
 .d {
   width: 32%;
@@ -115,12 +120,11 @@ label {
   width: 100%;
   padding: 0;
   min-height: 50%;
-  border: 1px solid crimson;
 }
 .container .action-head {
   margin: 0;
-  background-color: gray;
-  color: black;
+  background-color: #1abc9c5c;
+  color: #34568b;
   padding: 7px;
   width: 100%;
 }
@@ -128,19 +132,35 @@ label {
   font-size: 20px;
   font-family: "Slabo 27px", serif;
 }
-/* .l-option { */
-/* padding: 0; */
-/* } */
 .l-option li {
-  /* background-color: rgb(149, 6, 6); */
-  padding: 8px 0;
+  display: flex;
+  padding: 0;
+  height: 35px;
+  align-items: center;
 }
 .l-option li a {
-  padding: 0 15px;
+  padding: 5px 15px;
+  text-decoration: none;
   font-size: 17px;
+  width: 100%;
+  font-family: "Slabo 27px", serif;
+  color: #000;
 }
 .active {
-  /* background-color: rgb(232, 232, 235); */
-  background-color: rgb(96, 220, 34);
-  border-bottom: 3px solid blue;
+  background-color: rgb(224, 231, 220);
+  border-bottom: 3px solid rgb(81, 83, 84);
+}
+.l-option li a:hover:after {
+  /* background-color: rgb(224, 231, 220); */
+  width: 100%;
+}
+.l-option li a:after {
+  content: " ";
+  position: absolute;
+  background-color: #ff3c78;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 10px;
+  transition: 0.3s;
 }
