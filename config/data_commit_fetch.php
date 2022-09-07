@@ -24,7 +24,7 @@ function search_cli($NO_cli)
                 return $_SESSION['search_result'];
             }
         else:
-            $GLOBALS['ERROR_MSG'] = "<div class='alert alert-info'><p> Aucune client de ce numero <span style='color:red;'>$NO_cli</span> n'est trouve</p></div>";
+            $GLOBALS['ERROR_MSG'] = "<div class='alert alert-info'><p> Aucune client de ce numero ( <span style='color:red;'>$NO_cli</span>)  n'est trouve</p></div>";
             $_SESSION['search_result'] = '';
             return $_SESSION['search_result'];
         endif;
@@ -106,7 +106,7 @@ function supp_cli($cli_num)
 {
     try {
         if ($GLOBALS['mysqli']->query("DELETE FROM clients WHERE NOCLIENTS='$cli_num'") === TRUE):
-            $GLOBALS['ERROR_MSG'] = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><p>Supression effectuer avec succes $cli_num</p></div>";
+            $GLOBALS['ERROR_MSG'] = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><p>Supression effnnectuer avec succes ($cli_num)</p></div>";
             $GLOBALS['del-test'] = true;
         else:
             $GLOBALS['ERROR_MSG'] = "La suppresion a echouer, une erreur s'est produite";

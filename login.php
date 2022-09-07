@@ -47,7 +47,7 @@ endif;
     <form method="post">
       <div class="connection">
         <div class="title">
-          <h2>Connection</h2>
+          <h2 id="connection">Connection</h2>
         </div>
         <?php
 

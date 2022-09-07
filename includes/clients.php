@@ -26,7 +26,7 @@ if (isset($_POST['ajouter'])):
     endif;
 elseif (isset($_POST['effacer'])):
     if (!empty($_POST['cli-name']) || !empty($_POST['cli-fname']) || !empty($_POST['cli-birth']) || !empty($_POST['cli-adr']) || !empty($_POST['cli-tel']) || !empty($_POST['cli-ville']) || !empty($_POST['cli-pays'])):
-        if(isset($_SESSION['search_result']['cli_num']) && !$_SESSION['search_result']['cli_num']=''):
+        if(isset($_SESSION['search_result']['cli_num']) && !empty($_SESSION['search_result']['cli_num'])):
             supp_cli($_SESSION['search_result']['cli_num']);
         endif;
         $_SESSION['search_result']='';

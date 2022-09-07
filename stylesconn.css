@@ -165,3 +165,100 @@ small {
   margin: 20px 35%;
   align-self: center;
 }
+.anim {
+  animation: loading 0.9s infinite;
+}
+@keyframes loading {
+  0% {
+    width: 30%;
+    background-color: rgb(231, 56, 56);
+  }
+  10% {
+    width: 30%;
+    background-color: rgb(190, 231, 56);
+  }
+  20% {
+    width: 30%;
+    background-color: rgb(56, 158, 231);
+  }
+  30% {
+    width: 30%;
+    background-color: rgb(216, 231, 56);
+  }
+  40% {
+    width: 30%;
+    background-color: rgb(73, 231, 56);
+  }
+  50% {
+    width: 30%;
+    background-color: rgb(114, 56, 231);
+  }
+  60% {
+    width: 30%;
+    background-color: rgb(56, 231, 228);
+  }
+  70% {
+    width: 30%;
+    background-color: rgb(231, 56, 149);
+  }
+  80% {
+    width: 30%;
+    background-color: rgb(56, 231, 68);
+  }
+  90% {
+    width: 30%;
+    background-color: rgb(38, 36, 36);
+  }
+  100% {
+    width: 30%;
+    background-color: rgb(56, 222, 231);
+  }
+}
+.anim1 {
+  animation: loading1 0.9s infinite;
+}
+@keyframes loading1 {
+  0% {
+    /* width: 30%; */
+    color: rgb(231, 56, 56);
+  }
+  10% {
+    /* width: 30%; */
+    color: rgb(190, 231, 56);
+  }
+  20% {
+    /* width: 30%; */
+    color: rgb(56, 158, 231);
+  }
+  30% {
+    /* width: 30%; */
+    color: rgb(216, 231, 56);
+  }
+  40% {
+    /* width: 30%; */
+    color: rgb(73, 231, 56);
+  }
+  50% {
+    /* width: 30%; */
+    color: rgb(114, 56, 231);
+  }
+  60% {
+    /* width: 30%; */
+    color: rgb(56, 231, 228);
+  }
+  70% {
+    /* width: 30%; */
+    color: rgb(231, 56, 149);
+  }
+  80% {
+    color: rgb(56, 231, 68);
+  }
+  90% {
+    /* width: 30%; */
+    color: rgb(38, 36, 36);
+  }
+  100% {
+    /* width: 30%; */
+    color: rgb(56, 222, 231);
+  }
+}
