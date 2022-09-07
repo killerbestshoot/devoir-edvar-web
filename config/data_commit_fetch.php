@@ -33,26 +33,16 @@ function search_cli($NO_cli)
         die('Erreur ;' . $e->getMessage());
     }
 }
+
 function listing_cli()
 {
+
     try {
+
         $result = $GLOBALS['mysqli']->query("SELECT * FROM clients ");
         if ($result->num_rows):
-            while ($row = $result->fetch_assoc()) {
-                $_SESSION['cli_listing'] = array(
-                    'id' => $row['ID'],
-                    'cli_num' => $row['NOCLIENTS'],
-                    'cli_name' => $row['NOM'],
-                    'cli_fname' => $row['PRENOM'],
-                    'cli_sex' => $row['SEXE'],
-                    'cli_birth' => $row['DATENAISSANCE'],
-                    'cli_codepostal' => $row['CODEPOSTAL'],
-                    'cli_ville' => $row['VILLE'],
-                    'cli_pays' => $row['PAYS'],
-                    'cli_adr' => $row['ADDRESSE'],
-                    'cli_tel' => $row['TELEPHONE']
-                );
-                return $_SESSION['cli_listing'];
+            while ($row = $result->fetch_all(MYSQLI_ASSOC)) {
+                return $row;
             }
         else:
             echo "<div class='empty_msg'><p> Aucune client a afficher</p></div>";
@@ -63,6 +53,32 @@ function listing_cli()
     }
 }
 
+function listing_acha()
+{
+    try {
+        $result = $GLOBALS['mysqli']->query("SELECT *  FROM achats ");
+        if ($result->num_rows):
+            while ($row = $result->fetch_assoc()) {
+                $_SESSION['achat_li'] = array('id' => $row['ID'],
+                    'ID_ACHAT' => $row['ID_ACHAT'],
+                    'ID_CLIENT' => $row['ID_CLIENT'],
+                    'ID_ARTICLE' => $row['ID_ARTICLE'],
+                    'QUANTITE' => $row['QUANTITE'],
+                    'PRIX' => $row['PRIX'],
+                    'DATE' => $row['DATEs']
+                );
+                return $_SESSION['achat_li'];
+            }
+        else:
+            echo "<div class='empty_msg'>
+    <p> Aucune achat a afficher</p>
+</div>";
+        endif;
+    }
+    catch (Exception $e) {
+        die('Erreur ;' . $e->getMessage());
+    }
+}
 function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli_codepostal, $cli_ville, $cli_pays, $cli_adr, $cli_tel)
 {
     try {
@@ -102,6 +118,47 @@ function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function supp_cli($cli_num)
 {
     try {

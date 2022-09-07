@@ -223,3 +223,17 @@ label {
   position: absolute;
   border-radius: 50%;
 }
+/* ====== achat ===== */
+
+.achat,
+.article {
+  width: 80%;
+  margin: auto;
+}
+.txt {
+  margin-bottom: 15px;
+}
+.btnpos {
+  width: 70%;
+  margin: 15px auto;
+}
