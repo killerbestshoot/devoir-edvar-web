@@ -6,11 +6,11 @@ switch ($POSTE) {
                 <div class='action-head'>
                     <h4 class=''>Insertion</h4>
                 </div>
-                <form action=''>
+                <form>
                     <ul class='l-option'>
-                        <li ><a href='#'id='selectedoption'>client</a></li>
-                        <li><a href='#'id='selectedoption1'>article</a></li>
-                        <li><a href='#'id='selectedoption2'>achat</a></li>
+                        <li ><button type='submit' id='selectedoption' name='insert-client'>client</button></li>
+                        <li><button type='submit' id='selectedoption1' name='insert-article'>article</button></li>
+                        <li><button type='submit' id='selectedoption2'name='insert-achat'>achat</button></li>
                     </ul>
                 </form>
                 <div class='action-head'>
@@ -18,9 +18,9 @@ switch ($POSTE) {
                 </div>
                 <form>
                         <ul class='l-option'>
-                            <li><a href='#' id='selectedoption3'>clienct</a></li>
-                            <li><a href=''id='selectedoption4'>article</a></li>
-                            <li><a href=''id='selectedoption5'>achat</a></li>
+                            <li><button  id='selectedoption3' name='mod-client'>client</button></li>
+                            <li><button id='selectedoption4' name='mod-article'>article</button></li>
+                            <li><button id='selectedoption5' name='mod-achat'>achat</button></li>
                         </ul>
                     </form>
                     <div class='action-head'>
@@ -28,9 +28,9 @@ switch ($POSTE) {
                     </div>
                     <form>
                         <ul class='l-option'>
-                            <li class=''><a href=''id='selectedoption8'>client</a></li>
-                            <li><a href=''id='selectedoption7'>article</a></li>
-                            <li><a href=''id='selectedoption8'>achat</a></li>
+                            <li class=''><button id='selectedoption8' name='cn-clients'>client</button></li>
+                            <li><button id='selectedoption7' name='cn-article'>article</button></li>
+                            <li><button id='selectedoption8' name='cn-achat'>achat</button></li>
                         </ul>
                     </form>
          </div>";
