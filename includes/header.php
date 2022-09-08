@@ -9,6 +9,70 @@ switch($SCRIPT_NAME){
         'searched_txt'=>htmlspecialchars($_GET['search'])
     );
         break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+        break;
+    default:
+        case str_contains($SCRIPT_NAME,''):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+}
 endif;
 ?>
 <!DOCTYPE html>
