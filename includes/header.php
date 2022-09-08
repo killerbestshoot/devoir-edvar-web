@@ -1,10 +1,14 @@
 <?php
+$SCRIPT_NAME=$_SERVER['SCRIPT_NAME'];
 if (isset($_GET['search'])):
+switch($SCRIPT_NAME){
+    case str_contains($SCRIPT_NAME,''):
     require_once '../config/data_commit_fetch.php';
     search_cli(htmlspecialchars($_GET['search']));
     $_SESSION['session_fields_search_data'] = array(
         'searched_txt'=>htmlspecialchars($_GET['search'])
     );
+        break;
 endif;
 ?>
 <!DOCTYPE html>
