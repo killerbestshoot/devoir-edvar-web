@@ -45,6 +45,10 @@ endif;
     <?php
 if (isset($ERROR_MSG)):
     echo $ERROR_MSG;
+elseif(isset($SUCCES)):
+    echo $SUCCES;
+elseif(isset($FAILD)):
+    echo $FAILD;
 endif;
 ?>
 <form method="post">
