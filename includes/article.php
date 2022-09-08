@@ -3,10 +3,10 @@ require_once '../config/fetch_article_data.php';
 if (isset($_POST['valider_article'])):
     if (empty($_POST["Nom_article"]) || empty($_POST['P_article']) || empty($_POST['Nb-article']) || empty($_POST['desc'])):
         $_SESSION['fields_data_text'] = array(
-            'nom_a'=>htmlspecialchars($_POST['Nom_article']),
-            'prix_a'=>htmlspecialchars($_POST['P_article']),
-            'nombre_a'=>htmlspecialchars($_POST['Nb-article']),
-            'desc_a'=>htmlspecialchars($_POST['desc']),
+            'nom_a' => htmlspecialchars($_POST['Nom_article']),
+            'prix_a' => htmlspecialchars($_POST['P_article']),
+            'nombre_a' => htmlspecialchars($_POST['Nb-article']),
+            'desc_a' => htmlspecialchars($_POST['desc']),
         );
         $ERROR_MSG = "<div class='col-lg-11' style='margin-bottom:15px;'>
         <div class='alert alert-danger'>
@@ -22,11 +22,11 @@ if (isset($_POST['valider_article'])):
         $Nombre_A = htmlspecialchars($_POST['Nb-article']);
         $desc_A = htmlspecialchars($_POST['desc']);
         $num_A = substr($nom_A, 0, 3) . "-" . rand(10000, 1000000);
-        save_article($num_A,$nom_A, $prix_A, $Nombre_A, $desc_A);
+        save_article($num_A, $nom_A, $prix_A, $Nombre_A, $desc_A);
     endif;
-elseif(isset($_POST['annuler_article'])):
-     if (empty($_POST["Nom_article"]) || empty($_POST['P_article']) || empty($_POST['Nb-article']) || empty($_POST['desc'])):
-     $ERROR_MSG = "<div class='col-lg-11' style='margin-bottom:15px;'>
+elseif (isset($_POST['annuler_article'])):
+    if (empty($_POST["Nom_article"]) || empty($_POST['P_article']) || empty($_POST['Nb-article']) || empty($_POST['desc'])):
+        $ERROR_MSG = "<div class='col-lg-11' style='margin-bottom:15px;'>
      <div class='alert alert-danger'>
      <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
      <p>
@@ -45,10 +45,10 @@ endif;
     <?php
 if (isset($ERROR_MSG)):
     echo $ERROR_MSG;
-elseif(isset($SUCCES)):
-    echo $SUCCES;
-elseif(isset($FAILD)):
-    echo $FAILD;
+elseif (isset($SUCCES)):
+    echo "$SUCCES";
+elseif (isset($FAILD)):
+    echo "$FAILD";
 endif;
 ?>
 <form method="post">
@@ -56,20 +56,20 @@ endif;
         <div class="col-lg-5">
             <div>
                 <label for="N-client">NOM article</label>
-                <input type="text" class="form-control txt" name="Nom_article" placeholder="Ex : CL-2347 ">
+                <input type="text" class="form-control txt" name="Nom_article" placeholder="Ex : CL-2347 " value='<?= isset($_SESSION['search_result']['nom_A'])?$_SESSION['search_result']['nom_A']:''?>' >
             </div>
         </div>
         <div class="col-lg-3">
             <div>
                 <label for="N-client">Prix article</label>
-                <input type="text" class="form-control txt" name="P_article" placeholder="Ex :16000 gds ">
+                <input type="text" class="form-control txt" name="P_article" placeholder="Ex :16000 gds " value='<?= isset($_SESSION['search_result']['prix_A'])?$_SESSION['search_result']['prix_A']:''?>'>
             </div>
         </div>
         <div class="col-lg-3">
             <div>
                 <label for="Nb-article">Nombre article</label>
-                <input type="number" name="Nb-article" id="input" class="form-control txt" value="0" max="" step="1"
-                    required="required" title="nombre article" aria-valuemin="0">
+                <input type="number" name="Nb-article" id="input" class="form-control txt"  max="" step="1"
+                    required="required" title="nombre article" aria-valuemin="0" value='<?= isset($_SESSION['search_result']['qte_A'])?$_SESSION['search_result']['qte_A']:'0'?>'>
             </div>
         </div>
 
@@ -79,7 +79,7 @@ endif;
                 <div class="col-sm-14">
 
                     <textarea name="desc" id="textarea" class="form-control" rows="3" maxlength="120"
-                        placeholder="Descriptionde l'article..." title="un bref description"></textarea>
+                        placeholder="Descriptionde l'article..." title="un bref description" value='<?= isset($_SESSION['search_result']['desc_A'])?$_SESSION['search_result']['desc_A']:''?>'></textarea>
                 </div>
             </div>
         </div>

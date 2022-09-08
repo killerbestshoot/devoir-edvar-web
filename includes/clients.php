@@ -72,7 +72,7 @@ elseif (isset($FAILD)):
         <div class="info">
             <div class="d e">
                 <label for="client-name">Nom du client</label> <span style="color: red; font-size: 20px;"> * </span>
-                <input type="text" class="form-control" name="cli-name" id="cli-name" value='<?= isset($_SESSION['search_result']['cli_name'])?$_SESSION['search_result']['cli_name']:''?>' placeholder="Ex : Jhon">
+                <input type="text" class="form-control" name="cli-name" id="cli-name" value='<?= isset($_SESSION['search_result']['num_A'])?$_SESSION['search_result']['num_A']:''?>' placeholder="Ex : Jhon">
             </div>
             <div class="d f">
                 <label for="cli-fname">Prenom du client</label><span style="color: red; font-size: 20px;"> * </span>

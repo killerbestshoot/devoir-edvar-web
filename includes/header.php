@@ -1,80 +1,3 @@
-<?php
-$SCRIPT_NAME=$_SERVER['SCRIPT_NAME'];
-if (isset($_GET['search'])):
-switch($SCRIPT_NAME){
-    case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-        break;
-    default:
-        case str_contains($SCRIPT_NAME,''):
-    require_once '../config/data_commit_fetch.php';
-    search_cli(htmlspecialchars($_GET['search']));
-    $_SESSION['session_fields_search_data'] = array(
-        'searched_txt'=>htmlspecialchars($_GET['search'])
-    );
-}
-endif;
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,11 +34,11 @@ endif;
                             <div class="navbar-collapse collapse" id="mobile_menu">
                                 <ul class="nav navbar-nav">
                                     <li>
-                                        <form action=""  class="navbar-form">
+                                        <form action="" class="navbar-form">
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <input type="search" name="search" id="t-search" placeholder="Rechercher..."
-                                                        value='<?= isset($_SESSION['
+                                                    <input type="search" name="search" id="t-search"
+                                                        placeholder="Rechercher..." value='<?= isset($_SESSION['
                                                         session_fields_search_data'])?$_SESSION['session_fields_search_data']['searched_txt']:'';?>'
                                                     class="form-control" />
                                                     <span class="input-group-addon"><span

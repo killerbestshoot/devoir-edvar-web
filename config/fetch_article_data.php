@@ -61,3 +61,31 @@ function save_article($Num_a, $Nom_a, $Prix, $QTE, $Desc)
         }
     }
 }
+function search_art($NO_art)
+{
+    try {
+        $result = $GLOBALS['mysqli']->query("SELECT * FROM clients WHERE NOCLIENTS='$NO_art'");
+        if ($result->num_rows):
+            while ($row = $result->fetch_assoc()) {
+                $_SESSION['search_result'] = array(
+                    'id' => $row['ID'],
+                    'num_A' => $row['NUM_A'],
+                    'nom_A' => $row['NOM_A'],
+                    'desc_A' => $row['DESCRIPTION'],
+                    'prix_A' => $row['PRIX'],
+                    'qte_A' => $row['QUANTITE'],
+                );
+                return $_SESSION['search_result_'];
+            }
+        else:
+            $GLOBALS['ERROR_MSG'] = "<div class='alert alert-info'><p> Aucune article de ce numero ( <span style='color:red;'>$NO_art</span>)  n'est trouve</p></div>";
+            $_SESSION['search_result'] = '';
+            return $_SESSION['search_result'];
+        endif;
+    }
+    catch (Exception $e) {
+        die('Erreur ;' . $e->getMessage());
+    }
+}
+
+// function listing_cli()
