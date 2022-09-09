@@ -1,0 +1,3 @@
+Nom utilisateur :admin001
+mot de passe: admin001
+le fichier bonbagay.sql est a chargé sur phpmydmin
