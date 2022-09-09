@@ -16,15 +16,15 @@ else:
 endif;
 include '../includes/header.php';
 ?>
-<div class="confirm-deletion">
+<div class="confirm-deletion" id="confirm-dialg">
     <div class="title-conf">
         <p>
             voulez vous vraiment effectuer la supression
         </p>
     </div>
     <div class="conf-button">
-        <button type="button" class="btn btn-xs btn-success">supprimer</button>
-        <button type="button" class="btn btn-xs btn-success">annuler</button>
+        <button type="button" class="btn btn-xs btn-success" id="process-del">supprimer</button>
+        <button type="button" class="btn btn-xs btn-success" id="dismiss-del">annuler</button>
     </div>
 </div>
 <main class="body-separate">

@@ -9,6 +9,9 @@ const selected = new Array(
   document.getElementById("selectedoption7")
 );
 const search = document.getElementById("searchb");
+const deletion = document.getElementById("effacer-cli");
+const delAbort = document.getElementById("dismiss-del");
+const delproceed = document.getElementById("process-del");
 
 selected[0].addEventListener("click", () => {
   selected[0].classList.add("active");
@@ -64,4 +67,32 @@ search.addEventListener("mouseover", () => {
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("searched_text=" + searched_text);
   });
+});
+deletion.addEventListener("click", () => {
+  document.getElementById("confirm-dialg").style.visibility = "visible";
+  document.querySelector(".body-separate").style.filter = "blur(3px)";
+});
+delAbort.addEventListener("click", () => {
+  document.getElementById("confirm-dialg").style.visibility = "hidden";
+  document.querySelector(".body-separate").style.filter = "none";
+});
+delproceed.addEventListener("click", () => {
+  var num_cli = document.getElementById("num_client").value;
+  // var num_cli = "luc-3455";
+  xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        // var res = xhr.responseText;
+        var res = JSON.parse(xhr.responseText);
+        console.log(res);
+        document.getElementById("confirm-dialg").style.visibility = "hidden";
+        document.getElementById("message").innerHTML = res;
+        document.querySelector(".body-separate").style.filter = "none";
+      } else window.alert(xhr.status);
+    }
+  };
+  xhr.open("POST", "../config/data_commit_fetch.php", true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.send("del=" + num_cli);
 });

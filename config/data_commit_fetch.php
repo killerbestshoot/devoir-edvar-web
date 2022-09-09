@@ -119,60 +119,24 @@ function save_client($cli_num, $cli_name, $cli_fname, $cli_sex, $cli_birth, $cli
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function supp_cli($cli_num)
 {
     try {
         if ($GLOBALS['mysqli']->query("DELETE FROM clients WHERE NOCLIENTS='$cli_num'") === TRUE):
-            $GLOBALS['ERROR_MSG'] = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><p>Supression effnnectuer avec succes ($cli_num)</p></div>";
-            $GLOBALS['del-test'] = true;
+            $ERROR_MSG = "<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><p>Supression effnnectuer avec succes ($cli_num)</p></div>";
+        // $GLOBALS['del-test'] = true;
         else:
-            $GLOBALS['ERROR_MSG'] = "La suppresion a echouer, une erreur s'est produite";
-            $GLOBALS['del-test'] = false;
+            $ERROR_MSG = "La suppresion a echouer, une erreur s'est produite";
+        // $GLOBALS['del-test'] = false;
         endif;
         $GLOBALS['mysqli']->close();
-        return $GLOBALS['del-test'];
+        echo json_encode($ERROR_MSG);
     }
     catch (Exception $e) {
         die('Erreur ;;' . $e->getMessage());
     }
 }
+if (isset($_POST['del'])):
+    $del_num = $_POST['del'];
+    supp_cli($del_num);
+endif;

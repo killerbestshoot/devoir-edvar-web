@@ -244,11 +244,12 @@ footer {
   margin-top: 10rem;
 }
 .confirm-deletion {
-  /* display: none; */
-  top: 45%;
-  left: 35%;
+  visibility: hidden;
+  top: 40%;
+  left: 40%;
+  transform: translate(-10%);
   width: 30%;
-  z-index: 2000;
+  z-index: 20000;
   height: 30vh;
   margin: auto;
   display: flex;
@@ -256,13 +257,15 @@ footer {
   position: absolute;
   border-radius: 7px;
   flex-direction: column;
-  background-color: rgb(238, 181, 181);
+  background-color: #1abc9ce2;
 }
 .title-conf {
   width: 100%;
   text-align: center;
   margin: 30px auto;
   padding: 10px;
+  color: #fff;
+  font-size: 18px;
 }
 .conf-button {
   margin-top: 30px;
@@ -284,4 +287,7 @@ footer {
 .conf-button button:active {
   outline: none;
   border: none;
+}
+.body-separate {
+  /* filter: blur(2px); */
 }
