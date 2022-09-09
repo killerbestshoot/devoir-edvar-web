@@ -56,19 +56,19 @@ endif;
         <div class="col-lg-5">
             <div>
                 <label for="N-client">NOM article</label>
-                <input type="text" class="form-control txt" name="Nom_article" placeholder="Ex : CL-2347 " value='<?= isset($_SESSION['search_result']['nom_A'])?$_SESSION['search_result']['nom_A']:''?>' >
+                <input type="text" id="nom_articles" class="form-control txt" name="Nom_article" placeholder="Ex : CL-2347 ">
             </div>
         </div>
         <div class="col-lg-3">
             <div>
                 <label for="N-client">Prix article</label>
-                <input type="text" class="form-control txt" name="P_article" placeholder="Ex :16000 gds " value='<?= isset($_SESSION['search_result']['prix_A'])?$_SESSION['search_result']['prix_A']:''?>'>
+                <input type="text" id="prix_a" class="form-control txt" name="P_article" placeholder="Ex :16000 gds " value='<?= isset($_SESSION['search_result']['prix_A'])?$_SESSION['search_result']['prix_A']:''?>'>
             </div>
         </div>
         <div class="col-lg-3">
             <div>
                 <label for="Nb-article">Nombre article</label>
-                <input type="number" name="Nb-article" id="input" class="form-control txt"  max="" step="1"
+                <input type="number" name="Nb-article" id="input_nombre_a" class="form-control txt"  max="" step="1"
                     required="required" title="nombre article" aria-valuemin="0" value='<?= isset($_SESSION['search_result']['qte_A'])?$_SESSION['search_result']['qte_A']:'0'?>'>
             </div>
         </div>

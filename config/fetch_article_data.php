@@ -64,10 +64,10 @@ function save_article($Num_a, $Nom_a, $Prix, $QTE, $Desc)
 function search_art($NO_art)
 {
     try {
-        $result = $GLOBALS['mysqli']->query("SELECT * FROM clients WHERE NOCLIENTS='$NO_art'");
+        $result = $GLOBALS['mysqli']->query("SELECT * FROM articles WHERE NUM_A='$NO_art'");
         if ($result->num_rows):
             while ($row = $result->fetch_assoc()) {
-                $_SESSION['search_result'] = array(
+                $JSON_data = array(
                     'id' => $row['ID'],
                     'num_A' => $row['NUM_A'],
                     'nom_A' => $row['NOM_A'],
@@ -75,12 +75,13 @@ function search_art($NO_art)
                     'prix_A' => $row['PRIX'],
                     'qte_A' => $row['QUANTITE'],
                 );
-                return $_SESSION['search_result_'];
             }
+            echo json_encode($JSON_data);
         else:
-            $GLOBALS['ERROR_MSG'] = "<div class='alert alert-info'><p> Aucune article de ce numero ( <span style='color:red;'>$NO_art</span>)  n'est trouve</p></div>";
-            $_SESSION['search_result'] = '';
-            return $_SESSION['search_result'];
+            $JSON_data = "<div class='alert alert-info'>
+                <p> Aucune article de ce numero ( <span style='color:red;'>$NO_art</span>) n'est trouve</p>
+            </div>";
+            echo json_encode($JSON_data);
         endif;
     }
     catch (Exception $e) {
@@ -88,4 +89,8 @@ function search_art($NO_art)
     }
 }
 
-// function listing_cli()
+
+if (isset($_POST['searched_text'])):
+    $no_article = $_POST['searched_text'];
+    search_art($no_article);
+endif;

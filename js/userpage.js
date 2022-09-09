@@ -43,14 +43,25 @@ selected[2].addEventListener("click", () => {
 search.addEventListener("mouseover", () => {
   search.style.cursor = "pointer";
   search.addEventListener("click", () => {
-    var data = new FormData();
-    data.append("t-search", document.getElementById("t-search").value);
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "../config/data_commit_fetch.php");
-    xhr.onload = function () {
-      console.log(this.response);
+    var searched_text = document.getElementById("t-search").value;
+    xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          var data_article = JSON.parse(xhr.responseText);
+          console.log(data_article);
+          document.getElementById("nom_articles").innerHTML =
+            data_article.nom_A;
+          document.getElementById("prix_a").innerHTML = data_article.prix_A;
+          document.getElementById("input_nombre_a").innerHTML =
+            data_article.qte_A;
+          document.getElementById("textarea").innerHTML = data_article.desc_A;
+        } else window.alert(xhr.status);
+      }
     };
-    xhr.send(data);
-    return false;
+    // on envoie la requette
+    xhr.open("POST", "../config/fetch_article_data.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("searched_text=" + searched_text);
   });
 });

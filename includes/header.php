@@ -1,3 +1,12 @@
+<?php
+if (isset($_GET['search'])):
+    require_once '../config/data_commit_fetch.php';
+    search_cli(htmlspecialchars($_GET['search']));
+    $_SESSION['session_fields_search_data'] = array(
+        'searched_txt'=>htmlspecialchars($_GET['search'])
+    );
+endif;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +46,7 @@
                                         <form action="" class="navbar-form">
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <input type="search" name="search" id="t-search"
+                                                    <input type="text" name="search" id="t-search"
                                                         placeholder="Rechercher..." value='<?= isset($_SESSION['
                                                         session_fields_search_data'])?$_SESSION['session_fields_search_data']['searched_txt']:'';?>'
                                                     class="form-control" />
