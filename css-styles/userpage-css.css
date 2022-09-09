@@ -239,7 +239,7 @@ label {
 }
 /* ==== footer=== */
 footer {
-  background-color: #1abc9c5c;
+  background-color: hsla(168, 76%, 42%, 0.36);
   border-top: #000 1px solid;
   margin-top: 10rem;
 }
@@ -257,7 +257,7 @@ footer {
   position: absolute;
   border-radius: 7px;
   flex-direction: column;
-  background-color: #1abc9ce2;
+  background-color: hsla(168, 76%, 42%, 0.89);
 }
 .title-conf {
   width: 100%;
