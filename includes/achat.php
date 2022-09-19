@@ -5,6 +5,7 @@ require_once '../config/fetch_article_data.php';
 // print_r(listing_arti());
 
 ?>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium labore quos, iste quaerat esse tenetur cumque illo, veniam quas ipsam excepturi ipsum aperiam. Quam possimus eum, quae iure modi dolorum.
 <div class="achat">
     <div class="title">
         <h2>Achats</h2>

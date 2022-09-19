@@ -43,6 +43,7 @@ selected[2].addEventListener("click", () => {
   selected[6].classList.remove("active");
   selected[7].classList.remove("active");
 });
+
 search.addEventListener("mouseover", () => {
   search.style.cursor = "pointer";
   search.addEventListener("click", () => {

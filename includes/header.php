@@ -39,18 +39,19 @@ endif;
                                 </button>
                                 <a href="#" class="navbar-brand">Plezi Shipping</a>
                             </div>
-
-                            <div class="navbar-collapse collapse" id="mobile_menu">
+<!-- ici pr le trait -->
+                            <div class="navbar-collapse collapse" id="mobile_menu" style="border:none;">
                                 <ul class="nav navbar-nav">
-                                    <li>
-                                        <form action="" class="navbar-form">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input type="text" name="search" id="t-search"
+                                    <li> 
+                                        <!-- encore ici -->
+                                        <form action="" class="navbar-form" style="border:none;">
+                                            <div class="form-group" style="border:none;">
+                                                <div class="input-group"style="border:none;">
+                                                    <input style="border:none;" type="text" name="search" id="t-search"
                                                         placeholder="Rechercher..." value='<?= isset($_SESSION['
                                                         session_fields_search_data'])?$_SESSION['session_fields_search_data']['searched_txt']:'';?>'
                                                     class="form-control" />
-                                                    <span class="input-group-addon"><span
+                                                    <span class="input-group-addon"style="border:none;"><span
                                                             class="glyphicon glyphicon-search"
                                                             id="searchb"></span></span>
                                                 </div>
@@ -61,7 +62,7 @@ endif;
                                 <ul class="nav navbar-nav navbar-right">
                                     <li>
                                         <a href="#">
-                                            <img src="<?=$PROFILE?>" class="img-circle" height="30"
+                                            <img src="data:image/jpg;charset=utf8;base64,<?= base64_encode($PROFILE); ?>" class="img-circle" height="32" width="32"
                                                 alt="image de votre profile" loading="lazy" />
                                             <?=$USERNAME?>
                                         </a>
